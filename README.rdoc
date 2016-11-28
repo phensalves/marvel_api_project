@@ -2,11 +2,18 @@
 
 Before to run this project, please, follow the next steps.
 
-== Install rbenv or rvm to install the right ruby and rails versions*
+== Ruby and Rails versions
+
+- Ruby 2.3.1
+- Rails 4.2.3
+
+== Install rbenv or rvm to install the right ruby and rails versions
 
 If you are using Rbenv, please run: 
 
-rbenv init
+- rbenv init
+- rbenv local 2.3.1 
+
 
 
 
