@@ -16,7 +16,10 @@ If you are using Rbenv, please run:
 - $ rbenv init
 - $ rbenv local 2.3.1 
 
+== Before run rails server make sure that run:
 
+- $ bundle install
+- $ rake db:setup
 
 
 
