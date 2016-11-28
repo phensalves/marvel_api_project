@@ -13,8 +13,8 @@ Before to run this project, please, follow the next steps.
 
 If you are using Rbenv, please run: 
 
-- rbenv init
-- rbenv local 2.3.1 
+- $ rbenv init
+- $ rbenv local 2.3.1 
 
 
 
