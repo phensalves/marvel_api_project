@@ -1,3 +1,28 @@
+= MARVEL API PROJECT
+
+Before to run this project, please, follow the next steps.
+
+== Install rbenv or rvm to install the right ruby and rails versions*
+
+If you are using Rbenv, please run: 
+
+rbenv init
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
