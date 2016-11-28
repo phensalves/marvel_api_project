@@ -6,6 +6,8 @@ Before to run this project, please, follow the next steps.
 
 - Ruby 2.3.1
 - Rails 4.2.3
+- SQLite (developmemnt)
+- Postgres (production)
 
 == Install rbenv or rvm to install the right ruby and rails versions
 
