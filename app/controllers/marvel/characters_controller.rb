@@ -2,25 +2,17 @@ class Marvel::CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
 
   def index
-    @characters = Api::CharacterManager.new
-    @characters.process
+    if @characters
+      @characters = Character.paginate(page: params[:page], per_page: 20)
+    else
+      @characters = Api::CharacterManager.new
+      @characters.create_characters
+      @characters = Character.paginate(page: params[:page], per_page: 20)
+    end
   end
 
   def show
-  end
-
-  def create
-    @character = Character.new(character_params)
-
-    respond_to do |format|
-      if @character.save
-        format.html { redirect_to @character, notice: 'Character was successfully created.' }
-        format.json { render :show, status: :created, location: @character }
-      else
-        format.html { render :new }
-        format.json { render json: @character.errors, status: :unprocessable_entity }
-      end
-    end
+    @character = set_character
   end
 
   private
