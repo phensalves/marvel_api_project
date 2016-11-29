@@ -7,24 +7,30 @@ module Api
       @ts          = "#{API_CONFIG['ts']}"
       @api_key     = "#{API_CONFIG['api_key']}"
       @hash        = "#{API_CONFIG['secret_hash']}"
+      @limit       = "#{API_CONFIG['limit']}"
     end
 
     def create_characters
       get_characters
 
-      characters = []
-
-      characters << @marvel_characters["data"]["results"]
+      characters = @marvel_characters["data"]["results"]
 
       characters.each do |character|
-        @character = character
+        next if already_exists(character)
+
+        marvel_character =  Character.new(
+                              name:         character["name"],
+                              description:  character["description"],
+                              image:        character["thumbnail"]["path"].to_s
+                            )
+        marvel_character.save
       end
     end
 
     private
     def get_characters
       uri          = URI.parse("#{API_CONFIG['url']}")
-      params       = {ts: @ts, apikey: @api_key, hash: @hash}
+      params       = {ts: @ts, apikey: @api_key, hash: @hash, limit: @limit}
       uri.query    = URI.encode_www_form(params)
       http         = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -39,6 +45,10 @@ module Api
         response.body
       end
 
+    end
+
+    def already_exists character
+      (Character.where(name: character["name"]).first).present? ? true : false
     end
 
   end

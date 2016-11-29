@@ -4,3 +4,4 @@ marvel_api:
   ts: 1
   api_key: 'bb3b2f0c386f81c7956929012d448e3e'
   secret_hash: '3e1b71270559867e71fbaa466f0527d0'
+  limit: 100
