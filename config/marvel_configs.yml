@@ -1,9 +1,9 @@
 marvel_api:
-  url: https://gateway.marvel.com
+  url: 'https://gateway.marvel.com'
   port: '443'
-  characters: /v1/public/characters
+  characters: '/v1/public/characters'
   
-  api_key: bb3b2f0c386f81c7956929012d448e3e
-  secret_hash: 3e1b71270559867e71fbaa466f0527d0
+  api_key: 'bb3b2f0c386f81c7956929012d448e3e'
+  secret_hash: '3e1b71270559867e71fbaa466f0527d0'
 
   timestamp: '1'
