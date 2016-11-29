@@ -16,10 +16,16 @@ If you are using Rbenv, please run:
 - $ rbenv init
 - $ rbenv local 2.3.1 
 
-== Before run rails server make sure that run:
+== Before run rails server make sure that create your database.yml file and run:
 
 - $ bundle install
-- $ rake db:setup
+- $ rake db:create
+- $ rake db:migrate
+
+== To run test
+To run the test suite, just go to /test/specs and run the following command"
+
+- $ rspec
 
 
 
