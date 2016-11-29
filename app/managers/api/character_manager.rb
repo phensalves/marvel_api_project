@@ -20,20 +20,17 @@ module Api
 
     private
     def get_characters
-      uri      = URI.parse("#{API_CONFIG['url']}")
-      port     = "#{API_CONFIG['port']}"
-      params   = {timestamp: "#{API_CONFIG['timestamp']}", api_key: "#{API_CONFIG['api_key']}", hash: "#{API_CONFIG['secret_hash']}"}
-      
-      http_req = Net::HTTP.new(uri, port)
+      uri          = URI.parse("#{API_CONFIG['url']}")
+      params       = {timestamp: "#{API_CONFIG['timestamp']}", api_key: "#{API_CONFIG['api_key']}", hash: "#{API_CONFIG['secret_hash']}"}
+      uri.query    = URI.encode_www_form(params)
+      http         = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
 
-      http_req.use_ssl = true
+      request      = Net::HTTP::Get.new(uri.request_uri)
 
-      http_req.start { |http|
+      response     = http.request(request)
 
-        request = Net::HTTP::Get.new(uri, params)
-        
-        response = http.request request # Net::HTTPResponse object
-      }
+      response.body
 
       if response.body.include?("{") and response.body.include?("}")
         json = JSON.parse(response.body)
