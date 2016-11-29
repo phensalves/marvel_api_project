@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CharactersControllerTest < ActionController::TestCase
+class Marvel::CharactersControllerTest < ActionController::TestCase
   setup do
     @character = characters(:one)
   end
