@@ -1,6 +1,6 @@
 %p#notice= notice
 %h1 Listing Characters
-%table
+%table.table.table-striped
   %thead
     %tr
       %th Nome
@@ -15,4 +15,5 @@
         %td= "---"
 %br/
 
-=will_paginate @characters
+.digg_pagination
+  =will_paginate @characters

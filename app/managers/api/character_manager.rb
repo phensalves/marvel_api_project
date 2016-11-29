@@ -16,7 +16,6 @@ module Api
       characters = @marvel_characters["data"]["results"]
 
       characters.each do |character|
-        next if already_exists(character)
 
         marvel_character =  Character.new(
                               name:         character["name"],
@@ -28,6 +27,7 @@ module Api
     end
 
     private
+
     def get_characters
       uri          = URI.parse("#{API_CONFIG['url']}")
       params       = {ts: @ts, apikey: @api_key, hash: @hash, limit: @limit}
@@ -45,10 +45,6 @@ module Api
         response.body
       end
 
-    end
-
-    def already_exists character
-      (Character.where(name: character["name"]).first).present? ? true : false
     end
 
   end
