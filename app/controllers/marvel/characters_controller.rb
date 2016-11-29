@@ -1,4 +1,4 @@
-class CharactersController < ApplicationController
+class Marvel::CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
 
   def index

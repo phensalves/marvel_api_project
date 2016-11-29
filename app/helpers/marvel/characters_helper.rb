@@ -1,0 +1,2 @@
+module Marvel::CharactersHelper
+end
