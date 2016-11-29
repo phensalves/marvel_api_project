@@ -21,15 +21,13 @@ module Api
     private
     def get_characters
       uri          = URI.parse("#{API_CONFIG['url']}")
-      params       = {timestamp: "#{API_CONFIG['timestamp']}", api_key: "#{API_CONFIG['api_key']}", hash: "#{API_CONFIG['secret_hash']}"}
+      params       = {ts: "#{API_CONFIG['timestamp']}", apikey: "#{API_CONFIG['api_key']}", hash: "#{API_CONFIG['secret_hash']}"}
       uri.query    = URI.encode_www_form(params)
       http         = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
 
       request      = Net::HTTP::Get.new(uri.request_uri)
-
       response     = http.request(request)
-
       response.body
 
       if response.body.include?("{") and response.body.include?("}")
