@@ -70,7 +70,7 @@
 }
 
 .btn {
-  margin: 3% 13%;
+  float: right;
   a {
     color: #FFFFFF;
     &:hover{
@@ -80,11 +80,14 @@
 }
 
 .jumbotron {
-  width: 75%!important;
-  padding: 2%!important;
-  margin: 0 13%!important;
+  padding: 4% !important;
+  margin: 0 13% !important;
   p {
     font-size: 13px!important;
+  }
+  .container {
+    width: 75%;
+    float: right;
   }
 }
 

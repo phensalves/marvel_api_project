@@ -6,6 +6,7 @@ pt-BR:
     name: Nome 
     description: Descrição
     last_updated: Última Atualização
+    back: Retornar
   activerecord:
     errors:
       messages:

@@ -1,12 +1,11 @@
 %p#notice= notice
 .jumbotron
-  %h2 
-    = @character.name
-  %p
-    = @character.description
-    .row
-      .col-md-4.col-md-offset-4.left
-        = image_tag @character.image + "/portrait_fantastic.jpg"
+  .container
+    %h2 
+      = @character.name
+    %p
+      = @character.description
+  = image_tag @character.image + "/portrait_fantastic.jpg"
 
-.btn.btn-primary.btn-lg
-  = link_to 'Back', marvel_characters_path
+  .btn.btn-primary.btn-lg
+    = link_to t(:back, scope: [:character]), :back
