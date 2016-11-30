@@ -68,3 +68,26 @@
   width: 85%!important;
   margin: 3% 7% 0 7%;
 }
+
+.btn {
+  margin: 3% 13%;
+  a {
+    color: #FFFFFF;
+    &:hover{
+      color: #FFFFFF;
+    }
+  }
+}
+
+.jumbotron {
+  width: 75%!important;
+  padding: 2%!important;
+  margin: 0 13%!important;
+  p {
+    font-size: 13px!important;
+  }
+}
+
+h1 {
+  margin: 20px 100px!important;
+}

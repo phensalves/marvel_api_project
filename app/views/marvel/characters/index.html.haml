@@ -1,12 +1,15 @@
 %p#notice= notice
 %h1 
-  = t(:characters, scope: [:character])
+  = t(:index, scope: [:character])
 %table.table.table-striped.table-bordered.table-hover.table-condensed.table-responsive
   %thead
     %tr
-      %th Nome
-      %th Descrição
-      %th Última Atualização
+      %th 
+        = t(:name, scope: [:character])
+      %th 
+        = t(:description, scope: [:character])
+      %th 
+        = t(:last_updated, scope: [:character])
       / %th{:colspan => "3"}
   %tbody
     - @characters.each do |character|

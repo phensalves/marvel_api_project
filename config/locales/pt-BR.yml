@@ -2,7 +2,10 @@
 pt-BR:
   character:
     characters: Personagens
-    index: Lista de personagens
+    index: Lista de Personagens
+    name: Nome 
+    description: Descrição
+    last_updated: Última Atualização
   activerecord:
     errors:
       messages:
