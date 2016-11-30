@@ -1,6 +1,7 @@
 %p#notice= notice
-%h1 Listing Characters
-%table.table.table-striped
+%h1 
+  = t(:characters, scope: [:character])
+%table.table.table-striped.table-bordered.table-hover.table-condensed.table-responsive
   %thead
     %tr
       %th Nome
@@ -10,9 +11,9 @@
   %tbody
     - @characters.each do |character|
       %tr
-        %td= link_to character.name, @character
-        %td= character.description
-        %td= "---"
+        %td= link_to character.name, marvel_character_path(character)
+        %td= link_to character.description, marvel_character_path(character)
+        %td= display_last_update(character)
 %br/
 
 .digg_pagination

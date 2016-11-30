@@ -18,9 +18,9 @@ class Marvel::CharactersController < ApplicationController
   end
 
   private
-  
+
     def get_character
-      @character = Character.find_by(params[:id])
+      @character = Character.find(params[:id])
     end
 
     def character_params

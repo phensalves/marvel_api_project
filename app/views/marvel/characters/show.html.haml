@@ -1,4 +1,4 @@
 %p#notice= notice
-= link_to 'Edit', edit_character_path(@character)
-|
-= link_to 'Back', characters_path
+%h1 
+  = @character.name
+= link_to 'Back', marvel_characters_path

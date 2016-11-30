@@ -14,13 +14,12 @@ module Api
       get_characters
 
       characters = @marvel_characters["data"]["results"]
-
       characters.each do |character|
-
         marvel_character =  Character.new(
                               name:         character["name"],
                               description:  character["description"],
-                              image:        character["thumbnail"]["path"].to_s
+                              image:        character["thumbnail"]["path"].to_s,
+                              updated_at:   character["modified"].to_date
                             )
         marvel_character.save
       end
