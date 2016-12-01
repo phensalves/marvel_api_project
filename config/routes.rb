@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   namespace :marvel do
     root 'characters#index'
     resources :characters, only:[:index, :show]
