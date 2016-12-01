@@ -8,7 +8,7 @@ pt-BR:
     last_updated: Última Atualização
     back: Retornar
   will_paginate:
-    previous_lavel: Anterior
+    previous_label: Anterior
     next_label: Próximo
   activerecord:
     errors:
