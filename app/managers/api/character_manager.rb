@@ -19,7 +19,8 @@ module Api
                               name:         character["name"],
                               description:  character["description"],
                               image:        character["thumbnail"]["path"].to_s,
-                              updated_at:   character["modified"].to_date
+                              updated_at:   character["modified"].to_date,
+                              marvel_id:    character["id"]
                             )
         marvel_character.save
       end

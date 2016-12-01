@@ -6,6 +6,10 @@ pt-BR:
     name: Nome 
     description: Descrição
     last_updated: Última Atualização
+    back: Retornar
+  will_paginate:
+    previous_lavel: Anterior
+    next_label: Próximo
   activerecord:
     errors:
       messages:

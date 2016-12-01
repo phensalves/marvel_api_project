@@ -20,7 +20,7 @@ class Marvel::CharactersController < ApplicationController
   private
 
     def get_character
-      @character = Character.find(params[:id])
+      Character.find_by_id(params[:id])
     end
 
     def character_params

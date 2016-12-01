@@ -5,10 +5,12 @@ Rails.application.routes.draw do
     resources :characters, only:[:index, :show]
   end
 
+  
   namespace :api, defaults: { format: :json } do
-    get "/characters",    to: "characters#index"
-
-    get "/character/:id", to: "characters#show"
+    namespace :v1 do
+      get "/characters", to: 'characters#index'
+      get "/characters/:marvel_id", to: "characters#show"
+    end
   end
 
 end
