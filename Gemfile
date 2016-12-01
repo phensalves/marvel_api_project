@@ -13,6 +13,7 @@ gem 'will_paginate'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'haml'
 gem 'responders', '~> 2.0'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
