@@ -32,7 +32,7 @@ module Api
     def associate_comics
       get_character_comics
       
-      comics = @associate_comics["data"]["results"]
+      comics = @comics["data"]["results"]
 
       comics.each do |comic|
         marvel_comic = Comic.new(
@@ -56,7 +56,7 @@ module Api
     def get_character_comics
       call_marvel @character_comics_uri
 
-      @associate_comics = JSON.parse(@response.body)
+      @comics = JSON.parse(@response.body)
     end
 
     def load_character character
