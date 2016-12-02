@@ -5,5 +5,3 @@ json.characters @characters do |character|
   json.image                    character.image
   json.modified_at              character.updated_at
 end
-
-# json.array! @characters, partial: 'characters/character', as: :character

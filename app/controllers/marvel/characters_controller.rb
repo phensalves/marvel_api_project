@@ -1,5 +1,6 @@
 class Marvel::CharactersController < ApplicationController
-  before_action :get_character, only: [:show, :edit, :update, :destroy]
+  before_action :get_character, only: [:show]
+  before_action :authenticate_user!
 
   def index
     @characters = Character.paginate(page: params[:page], per_page: 10)
