@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202061713) do
+ActiveRecord::Schema.define(version: 20161202064513) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20161202061713) do
     t.integer  "marvel_id"
     t.string   "slug"
   end
+
+  create_table "comics", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "cover_number"
+    t.string   "image"
+    t.integer  "character_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "comics", ["character_id"], name: "index_comics_on_character_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",               default: "", null: false
