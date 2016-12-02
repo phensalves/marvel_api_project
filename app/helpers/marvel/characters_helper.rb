@@ -6,6 +6,6 @@ module Marvel::CharactersHelper
   end
 
   def has_any_comics? character
-    "Can't find any comics from this character!" unless character.comics.present?
+    t(:comics_blank, scope: [:comics]) unless character.comics.present?
   end
 end

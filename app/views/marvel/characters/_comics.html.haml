@@ -1,7 +1,7 @@
 .comics-field
   %center
     %h2
-      Comics
+      = t(:comics, scope: [:comics])
   .comics-blank
     = has_any_comics? @character
   - @character.comics.each do |comic|
@@ -10,10 +10,10 @@
         = image_tag comic.image + "/portrait_medium.jpg"
       .container.title
         %h4
-          Title:
+          = t(:title, scope: [:comics])
         %p
           = comic.title
       %h4
-        Cover Number:
+        = t(:cover_number, scope: [:comics])
       %p
         = comic.cover_number

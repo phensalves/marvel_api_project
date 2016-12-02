@@ -7,6 +7,11 @@ pt-BR:
     description: Descrição
     last_updated: Última Atualização
     back: Retornar
+  comics:
+    comics: Fascículos
+    title: 'Título:'
+    cover_number: 'Número de Capa:'
+    comics_blank: Não foi possível encontrar nenhum fascículo deste personagem!
   will_paginate:
     previous_label: Anterior
     next_label: Próximo
