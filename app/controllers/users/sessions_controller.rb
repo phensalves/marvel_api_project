@@ -3,18 +3,21 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
+    binding.pry
     super
   end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    binding.pry
+    super
+  end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    binding.pry
+    super
+  end
 
   # protected
 

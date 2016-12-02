@@ -8,9 +8,9 @@
     = csrf_meta_tags
   %body
     %p
-      .notice
-        = notice
-    %p
       .alert
         = alert
+    - if user_signed_in?
+      .btn.btn-primary.btn-logout
+        = link_to('Sair', destroy_user_session_path, :method=>'delete')
     = yield

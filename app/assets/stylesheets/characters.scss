@@ -82,6 +82,10 @@
   }
 }
 
+.btn-logout {
+  margin-right: 8%;
+}
+
 .jumbotron {
   padding: 4% !important;
   margin: 5% 13% !important;
@@ -96,4 +100,10 @@
 
 h1 {
   margin: 20px 100px!important;
+}
+
+#notice {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
 }
