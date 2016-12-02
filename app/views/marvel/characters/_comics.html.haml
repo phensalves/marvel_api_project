@@ -4,7 +4,13 @@
       Comics
   = @character.comics.each do |comic|
     .jumbotron
+      = image_tag comic.image + "/portrait_medium.jpg"
       .container
+        %h4
+          Title
         %p
           = comic.title
-      = image_tag comic.image + "/portrait_medium.jpg"
+        %h4
+          Cover Number
+        %p
+          = comic.cover_number
