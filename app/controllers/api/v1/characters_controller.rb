@@ -11,7 +11,6 @@ class Api::V1::CharactersController < CharactersBaseController
   end
 
   def create
-    binding.pry
     @character = Character.create(character_params)
     if @character.save
       render json: { message: "Personagem criado com sucesso!" }, status: 200
