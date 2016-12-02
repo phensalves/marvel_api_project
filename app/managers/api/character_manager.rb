@@ -32,7 +32,6 @@ module Api
       
       comics = @associate_comics["data"]["results"]
 
-
       comics.each do |comic|
         marvel_comic = Comic.new(
                         title:            comic["title"],

@@ -13,6 +13,7 @@ body {
   margin: 0 auto;
   .form-signin-heading {
     margin-bottom: 10px;
+    text-align: center;
   }
   .checkbox {
     margin-bottom: 10px;
@@ -21,7 +22,6 @@ body {
   .form-control {
     position: relative;
     height: auto;
-    //Instead of the line below you could use @include box-sizing($bs)
     box-sizing: border-box;
     padding: 10px;
     font-size: 16px;
@@ -31,16 +31,12 @@ body {
   }
   input[type="email"] {
     margin-bottom: -1px;
-    //Instead of the line below you could use @include border-bottom-right-radius($radius)
     border-bottom-right-radius: 0;
-    //Instead of the line below you could use @include border-bottom-left-radius($radius)
     border-bottom-left-radius: 0;
   }
   input[type="password"] {
     margin-bottom: 10px;
-    //Instead of the line below you could use @include border-top-left-radius($radius)
     border-top-left-radius: 0;
-    //Instead of the line below you could use @include border-top-right-radius($radius)
     border-top-right-radius: 0;
   }
 }

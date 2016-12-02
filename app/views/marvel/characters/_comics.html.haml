@@ -1,0 +1,10 @@
+.comics-field
+  %center
+    %h2
+      Comics
+  = @character.comics.each do |comic|
+    .jumbotron
+      .container
+        %p
+          = comic.title
+      = image_tag comic.image + "/portrait_medium.jpg"

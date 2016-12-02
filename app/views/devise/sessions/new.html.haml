@@ -1,6 +1,6 @@
 .container
   = form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form-signin"}) do |f|
-    %h2.form-signin-heading Log in
+    %h2.form-signin-heading Marvel System
     = f.email_field :email, class: "form-control", placeholder: "email", autofocus: true
     %br/
     = f.password_field :password, class: "form-control", placeholder: "senha", autocomplete: "off"
