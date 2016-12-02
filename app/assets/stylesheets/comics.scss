@@ -1,9 +1,26 @@
 .comics-field {
   h2 {
     text-align: center;
+    border-bottom: black;
+    border-bottom-style: groove;
   }
   border-bottom: black;
   border-bottom-style: groove;
   width: 75%;
   margin: 0 auto;
+  .title {
+    float: left;
+    width: 35%;
+    margin: 0 10%;
+  }
+  .image {
+    float: left;
+  }
+  .jumbotron-comic {
+    height: 250px;
+  }
+  .comics-blank {
+    margin: 2% 0;
+    text-align: center;
+  }
 }

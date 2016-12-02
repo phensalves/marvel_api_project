@@ -2,15 +2,18 @@
   %center
     %h2
       Comics
-  = @character.comics.each do |comic|
-    .jumbotron
-      = image_tag comic.image + "/portrait_medium.jpg"
-      .container
+  .comics-blank
+    = has_any_comics? @character
+  - @character.comics.each do |comic|
+    .jumbotron.jumbotron-comic
+      .image
+        = image_tag comic.image + "/portrait_medium.jpg"
+      .container.title
         %h4
-          Title
+          Title:
         %p
           = comic.title
-        %h4
-          Cover Number
-        %p
-          = comic.cover_number
+      %h4
+        Cover Number:
+      %p
+        = comic.cover_number
