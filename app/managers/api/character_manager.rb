@@ -74,8 +74,7 @@ module Api
       http.use_ssl = true
 
       request      = Net::HTTP::Get.new(uri.request_uri)
-      @response     = http.request(request)
-      @response.body
+      @response    = http.request(request)
     end
 
   end
