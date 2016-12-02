@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  get "/", to: "marvel/characters#index", as: "root"
+  
   namespace :marvel do
-    root 'characters#index'
     resources :characters, only:[:index, :show]
   end
 
