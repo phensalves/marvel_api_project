@@ -14,6 +14,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'haml'
 gem 'responders', '~> 2.0'
 gem 'devise'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'byebug'
