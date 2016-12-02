@@ -8,14 +8,13 @@ class Marvel::CharactersController < ApplicationController
     if @characters.present?
       @characters
     else
-      @characters = Api::CharacterManager.new
-      @characters.create_characters
-      @characters = Character.paginate(page: params[:page], per_page: 10)
+      get_all_characters
     end
   end
 
   def show
     @character = get_character
+    get_all_character_comics unless @character.comics.present?
   end
 
   private
@@ -26,6 +25,18 @@ class Marvel::CharactersController < ApplicationController
 
     def character_params
       params.fetch(:character, {})
+    end
+
+    def get_all_characters
+      @characters = Api::CharacterManager.new
+      @characters.create_characters
+      @characters = Character.paginate(page: params[:page], per_page: 10)
+    end
+
+    def get_all_character_comics
+      @character = get_character
+      @manager   = Api::CharacterManager.new({character: @character.id})
+      @manager.associate_comics
     end
 
 end

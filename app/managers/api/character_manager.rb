@@ -3,11 +3,12 @@ module Api
 
     API_CONFIG = YAML.load_file("#{Rails.root.to_s}/config/marvel_configs.yml")["marvel_api"]
 
-    def initialize
+    def initialize options={}
       @ts          = "#{API_CONFIG['ts']}"
       @api_key     = "#{API_CONFIG['api_key']}"
       @hash        = "#{API_CONFIG['secret_hash']}"
       @limit       = "#{API_CONFIG['limit']}"
+      @character   = load_character(options[:character])
     end
 
     def create_characters
@@ -23,6 +24,23 @@ module Api
                               marvel_id:    character["id"]
                             )
         marvel_character.save
+      end
+    end
+
+    def associate_comics
+      get_character_comics
+      
+      comics = @associate_comics["data"]["results"]
+
+
+      comics.each do |comic|
+        marvel_comic = Comic.new(
+                        title:            comic["title"],
+                        cover_number:     comic["issueNumber"],
+                        image:            comic["thumbnail"]["path"].to_s,
+                        character_id:     @character.id   
+                      )
+        marvel_comic.save
       end
     end
 
@@ -45,6 +63,32 @@ module Api
         response.body
       end
 
+    end
+
+    def get_character_comics
+      uri          = URI.parse("#{API_CONFIG['url']}" + '/' + "#{@character.marvel_id}" + '/comics')
+      params       = {ts: @ts, apikey: @api_key, hash: @hash, limit: @limit }
+      uri.query    = URI.encode_www_form(params)
+      http         = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
+
+      request      = Net::HTTP::Get.new(uri.request_uri)
+      response     = http.request(request)
+      response.body
+
+      if response.body.include?("{") and response.body.include?("}")
+        @associate_comics = JSON.parse(response.body)
+      else
+        response.body
+      end
+    end
+
+    def load_character character
+      begin
+        Character.friendly.find(character)
+      rescue ActiveRecord::RecordNotFound
+        nil
+      end
     end
 
   end
