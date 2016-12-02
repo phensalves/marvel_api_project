@@ -14,19 +14,23 @@ Before to run this project, please, follow the next steps.
 If you are using Rbenv, please run: 
 
 $ rbenv init
-___
+---
+
 $ rbenv local 2.3.1
-___
+---
 
 === Before run rails server make sure that create your database.yml file and run:
 
 $ bundle install
-___
+---
+
 $ rake db:create
-___
+---
+
 $ rake db:migrate
-___
+---
+
 $ rake db:seed
-___
+---
 
 === To consume local API, follow the examples below:
