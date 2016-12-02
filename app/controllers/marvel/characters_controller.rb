@@ -11,14 +11,4 @@ class Marvel::CharactersController < ApplicationController
     get_all_character_comics unless @character.comics.present?
   end
 
-  private
-
-    def get_character
-      Character.friendly.find(params[:id])
-    end
-
-    def character_params
-      params.fetch(:character, {})
-    end
-
 end

@@ -9,10 +9,4 @@ class Api::V1::CharactersController < ApplicationController
     @character = get_character
     get_all_character_comics unless @character.comics.present?
   end
-
-  private
-
-    def get_character
-      Character.where(marvel_id: params[:marvel_id]).first
-    end
 end
