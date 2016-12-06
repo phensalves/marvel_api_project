@@ -94,6 +94,6 @@ To create a new character you will need at least a marvel_id parameter, but we c
 
 To update, its similar, you can do:
 
-  PUT http://http://localhost:3000/api/v1/characters/:marvel_id/edit?name=Sheila //for example
+  PUT http://localhost:3000/api/v1/characters/:marvel_id/edit?name=Sheila //for example
 
 So, is it! Enjoy!
