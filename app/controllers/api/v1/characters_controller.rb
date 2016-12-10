@@ -41,10 +41,7 @@ class Api::V1::CharactersController < CharactersBaseController
   private
 
   def character_params
-    @params = { name: params[:name], 
-                description: params[:description], 
-                marvel_id: params[:marvel_id]
-              }
+    params.permit(:name, :description, :marvel_id, :image)
   end
 
   def get_character_by_marvel_id
