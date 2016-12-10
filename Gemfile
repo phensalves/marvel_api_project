@@ -21,6 +21,7 @@ group :development, :test do
   gem 'spring'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'sqlite3'
 end
 
 group :test do

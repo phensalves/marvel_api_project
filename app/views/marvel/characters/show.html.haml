@@ -5,7 +5,7 @@
       = @character.name
     %p
       = @character.description
-  = image_tag @character.image + "/portrait_fantastic.jpg"
+  = image_tag @character.image + "/portrait_fantastic.jpg" if @character.image.present?
 
   .btn.btn-primary.btn-lg
     = link_to t(:back, scope: [:character]), :back
