@@ -2,6 +2,6 @@ marvel_api:
   url: 'https://gateway.marvel.com:443/v1/public/characters'
 
   ts: 1
-  api_key: 'bb3b2f0c386f81c7956929012d448e3e'
-  secret_hash: '3e1b71270559867e71fbaa466f0527d0'
+  api_key: <% ENV["MARVEL_API_KEY"] %>
+  secret_hash: <% ENV["MARVEL_SECRET_HASH"] %>
   limit: 100
